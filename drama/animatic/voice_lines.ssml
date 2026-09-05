@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- voice_lines.ssml: SSML for 60s animatic TTS rendering -->
+<!-- Use with a TTS engine that supports SSML and voice selection. Replace voice names with engine-specific voices as needed. -->
+<speak>
+  <!-- Purnima (young, warm, determined) -->
+  <voice name="young_female_warm">
+    <prosody rate="medium" pitch="medium">Baba... <break time="200ms"/> he's just a baby. <break time="150ms"/> Please.</prosody>
+  </voice>
+
+  <!-- Dhermesh (deep, stern) - initial line -->
+  <voice name="deep_male_stern">
+    <prosody rate="medium" pitch="low">Take him away.</prosody>
+  </voice>
+
+  <!-- Dhermesh (deep, stern) - shouted line -->
+  <voice name="deep_male_stern">
+    <prosody rate="medium" pitch="low"><emphasis level="strong">Enough!</emphasis></prosody>
+  </voice>
+
+  <!-- Mommy (gentle, tearful) -->
+  <voice name="gentle_female">
+    <prosody rate="slow" pitch="medium">Purnima... <break time="200ms"/></prosody>
+  </voice>
+
+  <!-- Purnima (soft, resolved) final line -->
+  <voice name="young_female_warm">
+    <prosody rate="medium" pitch="medium">I'll go.</prosody>
+  </voice>
+
+  <!-- SFX note: insert slap impact at 00:45 as separate audio file; keep 200–400ms silence after for dramatic pause -->
+</speak>
