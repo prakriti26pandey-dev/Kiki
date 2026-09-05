@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 15s animated SVG preview: "The Slap" key beat -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <style>
+    .bg{fill:#0b1220}
+    .room{fill:#0f1724}
+    .floor{fill:#1f2937}
+    .light{fill:rgba(255,230,180,0.06)}
+    .purna{fill:#fff0e6}
+    .dher{fill:#f4dccf}
+    .mom{fill:#fff2e9}
+    .baby{fill:#fff4e6}
+    .line{stroke:#0b1220;stroke-width:2}
+    .label{fill:#f8fafc;font-family:Arial,Helvetica,sans-serif;font-size:20px}
+
+    /* timing: 0-2s fade in, 2-6s idle, 6-7s raise, 7s flash+recoil, 7-11s reaction, 11-15s pause */
+    .scene{opacity:0;animation:fadeIn 2s forwards}
+    .hand{transform-origin:1010px 300px;animation:handRaise 1s 6s forwards}
+    .purnHead{transform-origin:680px 360px;animation:purnRecoil 0.6s 7s forwards}
+    .babySway{transform-origin:720px 420px;animation:babySway 0.6s 7s forwards}
+    .tear{opacity:0;animation:tearDrop 4s 7s forwards}
+    .flash{fill:#fff;opacity:0;animation:flash 0.2s 7s forwards}
+
+    @keyframes fadeIn{to{opacity:1}}
+    @keyframes handRaise{from{transform:rotate(0deg)} to{transform:rotate(-40deg)}}
+    @keyframes purnRecoil{0%{transform:rotate(0deg)} 50%{transform:rotate(6deg) translateY(-6px)} 100%{transform:rotate(0deg)}}
+    @keyframes babySway{0%{transform:translateX(0)}50%{transform:translateX(6px)}100%{transform:translateX(0)}}
+    @keyframes tearDrop{0%{opacity:0;transform:translateY(0)}50%{opacity:1;transform:translateY(8px)}100%{opacity:0;transform:translateY(18px)}}
+    @keyframes flash{0%{opacity:0} 20%{opacity:0.95} 100%{opacity:0}}
+
+    /* slow camera bob */
+    .camera{animation:camBob 6s infinite ease-in-out}
+    @keyframes camBob{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+  </style>
+
+  <rect class="bg" width="1280" height="720" />
+  <g class="scene camera">
+    <!-- room background -->
+    <rect x="80" y="60" width="1120" height="520" class="room" rx="14"/>
+    <rect x="80" y="400" width="1120" height="180" class="floor" rx="10"/>
+    <ellipse cx="640" cy="520" rx="300" ry="40" fill="rgba(0,0,0,0.15)"/>
+    <!-- lamp/light splash -->
+    <ellipse cx="720" cy="160" rx="220" ry="80" class="light"/>
+
+    <!-- Dhermesh (right) -->
+    <g transform="translate(940,220)">
+      <rect x="-50" y="40" width="100" height="180" rx="12" class="dher"/>
+      <circle cx="0" cy="0" r="44" class="dher" />
+      <!-- hand that raises -->
+      <rect x="40" y="80" width="18" height="90" rx="9" class="dher hand"/>
+      <!-- label -->
+      <text x="-60" y="-80" class="label">Dhermesh</text>
+    </g>
+
+    <!-- Purnima (center) holding baby -->
+    <g id="purn" transform="translate(640,280)">
+      <rect x="-60" y="20" width="120" height="160" rx="12" class="purna"/>
+      <circle cx="0" cy="-56" r="44" class="purna purnHead" />
+      <!-- baby in arms -->
+      <g transform="translate(80,80)">
+        <ellipse cx="0" cy="0" rx="28" ry="22" class="baby babySway" />
+      </g>
+      <text x="-80" y="-110" class="label">Purnima</text>
+    </g>
+
+    <!-- Mommy (left, seated) -->
+    <g transform="translate(360,320)">
+      <rect x="-40" y="10" width="80" height="120" rx="10" class="mom"/>
+      <circle cx="0" cy="-44" r="34" class="mom"/>
+      <text x="-70" y="-100" class="label">Mommy</text>
+    </g>
+
+    <!-- reaction labels -->
+    <text x="640" y="620" text-anchor="middle" class="label">(key beat preview)</text>
+
+    <!-- slap flash overlay -->
+    <rect x="80" y="60" width="1120" height="520" class="flash" />
+
+    <!-- tear near Purnima -->
+    <circle cx="720" cy="340" r="6" class="tear" fill="#9ec5ff"/>
+  </g>
+
+  <!-- footer note -->
+  <text x="20" y="700" class="label">Preview: "The Slap" — 15s loop. Created for Episode 1 test scene.</text>
+</svg>
