@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Dhermesh Pandey - animated SVG portrait -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <style>
+    .bg { fill: #1f2937; }
+    .card { fill: #0f172a; rx: 24; }
+    .hair { fill: #2b2b2b; }
+    .face { fill: #f4dccf; }
+    .eye { fill: #111827; }
+    .text { fill: #f3f4f6; font-family: 'Segoe UI', Roboto, Arial; }
+    .sub { fill: #93c5fd; font-size: 28px; }
+    .blink { transform-origin: 50% 50%; animation: blink 4s infinite; }
+    .bob { animation: bob 6s ease-in-out infinite; }
+    @keyframes blink { 0%,90%{ opacity:1 } 92%{ opacity:0 } 94%{ opacity:1 } }
+    @keyframes bob { 0%{ transform: translateY(0) } 50%{ transform: translateY(-6px) } 100%{ transform: translateY(0) } }
+  </style>
+  <rect class="bg" width="1024" height="1024" />
+  <g transform="translate(64,64)">
+    <rect class="card" width="896" height="896" />
+    <g class="bob" transform="translate(0,20)">
+      <!-- hair -->
+      <path class="hair" d="M256 160c120-40 320-40 440 0v200c0 80-160 200-220 220-60-20-220-140-220-220V160z" />
+      <!-- face -->
+      <ellipse class="face" cx="448" cy="420" rx="220" ry="260" />
+      <!-- eyes -->
+      <g class="blink">
+        <ellipse class="eye" cx="360" cy="420" rx="22" ry="14" />
+        <ellipse class="eye" cx="536" cy="420" rx="22" ry="14" />
+      </g>
+      <!-- smile -->
+      <path d="M360 520 Q448 580 536 520" stroke="#9a4b3e" stroke-width="8" fill="none" stroke-linecap="round" />
+    </g>
+    <!-- text -->
+    <text class="text" x="60" y="660" font-size="44">Dhermesh Pandey</text>
+    <text class="sub" x="60" y="710">Age: 48 · Father · Traditional</text>
+    <text class="text" x="60" y="760" font-size="28">Traits: Strict · Controlling · Traditional</text>
+    <text class="text" x="60" y="800" font-size="28">Notes: Complex, conflicted — layered toward family honor</text>
+  </g>
+</svg>
